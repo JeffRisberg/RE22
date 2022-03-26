@@ -1,7 +1,7 @@
 jest
   .unmock('redux')
   .unmock('react-redux')
-  .unmock('../ItemListContainer')
+  .unmock('../EventListContainer')
   .unmock('../../../../js/reducers/items')
   .unmock('../../../../js/reducers/events')
 ;
@@ -15,12 +15,12 @@ import { Route } from 'react-router-dom';
 import { ConnectedRouter } from 'react-router-redux';
 import { Provider } from 'react-redux';
 import createHistory from 'history';
-import { ActionTypes } from '../../../../js/constants';
-import ItemListContainer from '../../../../js/components/Items/ItemListContainer';
-import items from '../../../../js/reducers/items';
-import events from '../../../../js/reducers/events';
+import { ActionTypes } from '../../../constants';
+import EventListContainer from '../EventListContainer';
+import items from '../../../reducers/items';
+import events from '../../../reducers/events';
 
-describe('We can render an ItemListContainer', () => {
+describe('We can render an EventListContainer', () => {
   it('contains content', () => {
 
     const combinedReducers1 = combineReducers({
@@ -48,33 +48,33 @@ describe('We can render an ItemListContainer', () => {
     const history = createHistory({ basename: '/' });
 
     store.dispatch({
-      type: ActionTypes.FETCH_ITEMS_SUCCESS,
-      items: [{ text: "Lassie", description: "Big dog", value: 67 }],
+      type: ActionTypes.FETCH_EVENTS_SUCCESS,
+      events: [{ text: "Dinner", time: "1800" }],
       meta: {
-        log: ['item changed']
+        log: ['event changed']
       }
     });
 
-    const itemList =
+    const eventList =
       ReactTestUtils.renderIntoDocument(
         <div>
           <Provider store={store}>
             <ConnectedRouter history={history}>
-              <Route component={ItemListContainer}/>
+              <Route component={EventListContainer}/>
             </ConnectedRouter>
           </Provider>
         </div>
       );
 
-    const itemListNode = ReactDOM.findDOMNode(itemList);
+    const eventListNode = ReactDOM.findDOMNode(eventList);
 
-    expect(itemListNode.textContent).toContain('Add Item'); // above table
+    expect(eventListNode.textContent).toContain('Add Event'); // above table
 
     /*
-    expect(itemListNode.textContent).toContain('Value'); // in table header
+    expect(eventListNode.textContent).toContain('hours'); // in table header
 
-    expect(itemListNode.textContent).toContain('Lassie'); // in item text
-    expect(itemListNode.textContent).toContain('Big dog'); // in item description
+    expect(eventListNode.textContent).toContain('Dinner'); // in event text
+    expect(eventListNode.textContent).toContain('1800'); // in event time
     */
   });
 });

@@ -1,6 +1,6 @@
 import thunkMiddleware from 'redux-thunk';
 import { createStore /*, applyMiddleware, compose*/ } from 'redux';
-import appReducer from './reducers/reducer';
+import appReducer from './reducers/index';
 
 //Store = Globalized store
 //Action => create/update state for service definitions(create or update) new service definitions

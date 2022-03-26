@@ -1,26 +1,22 @@
-@import "../../../styles/app.scss";
+@import "src/index.css/app";
 
-.items {
+.events {
 
-  &__item {
-    background-color: #fff;
+  &__event {
+    color: white;
+    background-color: #124592;
     padding: 10px;
   }
 
   &__list {
-    background-color: #ddd;
     padding: 5px;
     margin-top: 10px;
     margin-bottom: 5px;
     min-height: 250px;
   }
 
-  &__list thead {
-    background-color: #ee9415;
-  }
-
   &__detail {
-    background-color: #eecf80;
+    background-color: #ddefff;
     padding: 5px;
     margin-top: 10px;
     margin-bottom: 5px;

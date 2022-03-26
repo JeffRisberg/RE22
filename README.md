@@ -8,6 +8,7 @@ Technologies used:
 - ES6
 - Webpack
 - Babel
+- ReactScripts
 
 ## How to start
 

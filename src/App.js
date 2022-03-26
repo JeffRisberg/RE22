@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
 import {PropTypes} from 'prop-types';
 
 class Square extends React.Component {
@@ -42,7 +43,7 @@ class Board extends React.Component {
   }
 }
 
-class AppRoot extends React.Component {
+class App extends React.Component {
   render() {
     return (
       <div className="game">
@@ -61,9 +62,9 @@ class AppRoot extends React.Component {
 // ========================================
 
 ReactDOM.render(
-  <AppRoot />,
+  <App />,
   document.getElementById('root')
 );
 
 
-export default AppRoot;
+export default App;
