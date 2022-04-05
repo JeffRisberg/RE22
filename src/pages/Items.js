@@ -1,30 +1,26 @@
 import React, { Component } from 'react';
-import { Medium, LessThanMedium } from '../toolkit';
-import ItemListContainer from '../components/Items/ItemListContainer';
-import ItemFormContainer from '../components/Items/ItemFormContainer';
 
 class Items extends Component {
 
-  render() {
-    const id = this.props.match.params != undefined ? this.props.match.params.id : undefined;
-    const content = (id != undefined) ?
-      <ItemFormContainer {...this.props} /> : <ItemListContainer {...this.props} />;
+    render() {
+        return (
+            <div className={this.props.className}>
+                <h2>Events page</h2>
 
-    return (
-      <div>
-        <Medium>
-          <div style={{ borderBottom: '5px solid red' }}>
-            {content}
-          </div>
-        </Medium>
-        <LessThanMedium>
-          <div style={{ borderBottom: '5px solid blue' }}>
-            {content}
-          </div>
-        </LessThanMedium>
-      </div>
-    )
-  }
+                <div className="row">
+                    <div className="col-md-4">
+                        feature 1
+                    </div>
+                    <div className="col-md-4">
+                        feature 2
+                    </div>
+                    <div className="col-md-4">
+                        feature 3
+                    </div>
+                </div>
+            </div>
+        );
+    }
 }
 
 export default Items;

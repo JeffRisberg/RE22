@@ -1,69 +1,57 @@
-import React, {Component} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import {PropTypes} from 'prop-types';
-
-class Square extends React.Component {
-  render() {
-    return (
-      <button className="square">
-        {/* TODO */}
-      </button>
-    );
-  }
-}
-
-class Board extends React.Component {
-  renderSquare(i) {
-    return <Square />;
-  }
-
-  render() {
-    const status = 'Next player: X';
-
-    return (
-      <div>
-        <div className="status">{status}</div>
-        <div className="board-row">
-          {this.renderSquare(0)}
-          {this.renderSquare(1)}
-          {this.renderSquare(2)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(3)}
-          {this.renderSquare(4)}
-          {this.renderSquare(5)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(6)}
-          {this.renderSquare(7)}
-          {this.renderSquare(8)}
-        </div>
-      </div>
-    );
-  }
-}
+import {NavLink, Route, Router, Switch} from "react-router-dom";
+import Home from './pages/Home';
+import Items from './pages/Items';
+import Events from './pages/Events';
 
 class App extends React.Component {
-  render() {
-    return (
-      <div className="game">
-        <div className="game-board">
-          <Board />
-        </div>
-        <div className="game-info">
-          <div>{/* status */}</div>
-          <ol>{/* TODO */}</ol>
-        </div>
-      </div>
-    );
-  }
+    static propTypes = {
+        history: PropTypes.object.isRequired
+    };
+
+    render() {
+        const {history} = this.props;
+
+        return (
+        <Router history={history}>
+            <div>
+                <div className="navbar navbar-inverse navbar-fixed-top"
+                     style={{marginBottom: '0px'}}>
+                    <div className="container">
+                        <div className="navbar-inner">
+                            <NavLink to="/" className="navbar-brand">RE03</NavLink>
+
+                            <div className="navbar-collapse collapse">
+                                <ul className="nav navbar-nav">
+                                    <li><NavLink to="/items">Items</NavLink></li>
+                                    <li><NavLink to="/events">Events</NavLink></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="container">
+                    <Switch>
+                        <Route exact path="/" component={Home}/>
+                        <Route exact path="/items" component={Items}/>
+                        <Route exact path="/items/detail/:id" component={Items}/>
+                        <Route exact path="/events" component={Events}/>
+                        <Route exact path="/events/detail/:id?" component={Events}/>
+                    </Switch>
+                </div>
+            </div>
+        </Router>
+        )
+    }
 }
 
 // ========================================
 
 ReactDOM.render(
-  <App />,
-  document.getElementById('root')
+    <App/>,
+    document.getElementById('root')
 );
 
 
