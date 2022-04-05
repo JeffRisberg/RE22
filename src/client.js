@@ -11,8 +11,8 @@ const history = createBrowserHistory({basename: '/'});
 const store = configureStore({initialState: {}, history});
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App history={history}/>
-  </Provider>,
-  document.getElementById('app-root')
+    <Provider store={store}>
+        <App history={history}/>
+    </Provider>,
+    document.getElementById('app')
 );

@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import {PropTypes} from 'prop-types';
 import {NavLink, Route, Router, Switch} from "react-router-dom";
 import Home from './pages/Home';
@@ -36,9 +35,7 @@ class App extends React.Component {
                     <Switch>
                         <Route exact path="/" component={Home}/>
                         <Route exact path="/items" component={Items}/>
-                        <Route exact path="/items/detail/:id" component={Items}/>
                         <Route exact path="/events" component={Events}/>
-                        <Route exact path="/events/detail/:id?" component={Events}/>
                     </Switch>
                 </div>
             </div>
@@ -46,13 +43,5 @@ class App extends React.Component {
         )
     }
 }
-
-// ========================================
-
-ReactDOM.render(
-    <App/>,
-    document.getElementById('root')
-);
-
 
 export default App;

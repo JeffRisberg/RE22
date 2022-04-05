@@ -10,7 +10,6 @@ const configureStore = ({ initialState = {}, history }) => {
   const reducer = combineReducers({
     routing: routerReducer,
     app: reducers,
-    form: formReducer,
   });
 
   const logger = createLogger();
