@@ -3,24 +3,17 @@
 Technologies used:
 
 - React
+- React Scripts
 - Redux
-- Router V5
-- ES6
-- Webpack
-- Babel
-- ReactScripts
+- Router V6
+- MUI 5
 
 ## How to start
 
 Run:
 ```
 npm install
-webpack --watch
-```
-
-Then in a separate window, start the backend as:
-```
-node server
+npm start
 ```
 
 Check your http://localhost:3000/ or  `open http://localhost:3000/`

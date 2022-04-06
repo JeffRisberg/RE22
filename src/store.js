@@ -1,4 +1,3 @@
-import thunkMiddleware from 'redux-thunk';
 import { createStore /*, applyMiddleware, compose*/ } from 'redux';
 import appReducer from './reducers/index';
 
@@ -33,6 +32,6 @@ state:{
 //const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 export const store = createStore(
-  //appReducer,
+  appReducer
   //composeEnhancers(applyMiddleware(thunkMiddleware))
 );

@@ -5,7 +5,7 @@ class Home extends Component {
   render() {
     return (
       <div className={this.props.className}>
-        <h2>RE03 Example</h2>
+        <h2>RE22 Example</h2>
 
         <div className="row">
           <div className="col-md-4">

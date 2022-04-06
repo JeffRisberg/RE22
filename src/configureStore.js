@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware, combineReducers } from 'redux';
+/*import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { routerReducer, routerMiddleware } from 'react-router-redux';
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
@@ -30,3 +30,4 @@ const configureStore = ({ initialState = {}, history }) => {
 };
 
 export default configureStore;
+*/
