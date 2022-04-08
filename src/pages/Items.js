@@ -1,26 +1,45 @@
-import React, {Component} from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
+import axios from "axios";
+import Table from "../components/Table";
 
-class Items extends Component {
+function Items() {
 
-  render() {
-    return (
-      <div className={this.props.className}>
-        <h2>Items page</h2>
+  const columns = useMemo(
+    () => [
+      {
+        Header: "Items",
+        columns: [
+          {
+            Header: "Name",
+            accessor: "name"
+          },
+          {
+            Header: "Type",
+            accessor: "type"
+          },
+          {
+            Header: "Value",
+            accessor: "value"
+          }
+        ]
+      }
+      ]);
 
-        <div className="row">
-          <div className="col-md-4">
-            feature 1
-          </div>
-          <div className="col-md-4">
-            feature 2
-          </div>
-          <div className="col-md-4">
-            feature 3
-          </div>
-        </div>
-      </div>
-    );
-  }
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const result = await axios("https://localhost:3000/api/items");
+      setData(result.data);
+    })();
+  }, []);
+
+  return (
+    <div>
+        <Table columns={columns} data={data}/>
+    </div>
+  )
 }
 
 export default Items;
+
