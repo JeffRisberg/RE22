@@ -14,8 +14,8 @@ function Items() {
             accessor: "name"
           },
           {
-            Header: "Type",
-            accessor: "type"
+            Header: "Description",
+            accessor: "description"
           },
           {
             Header: "Value",
@@ -23,13 +23,15 @@ function Items() {
           }
         ]
       }
-      ]);
+      ],
+    []
+  );
 
   const [data, setData] = useState([]);
 
   useEffect(() => {
     (async () => {
-      const result = await axios("https://localhost:3000/api/items");
+      const result = await axios("http://localhost:3000/api/items");
       setData(result.data);
     })();
   }, []);
