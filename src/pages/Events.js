@@ -5,18 +5,18 @@ import React from 'react';
 function Events() {
 
   return (
-    <div className={this.props.className}>
+    <div>
       <h2>Events page</h2>
 
       <div className="row">
         <div className="col-md-4">
-          feature 1
+          Feature 1
         </div>
         <div className="col-md-4">
-          feature 2
+          Feature 2
         </div>
         <div className="col-md-4">
-          feature 3
+          Feature 3
         </div>
       </div>
     </div>

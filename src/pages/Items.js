@@ -32,7 +32,7 @@ function Items() {
   useEffect(() => {
     (async () => {
       const result = await axios("http://localhost:3000/api/items");
-      setData(result.data);
+      setData(result.data.data);
     })();
   }, []);
 
