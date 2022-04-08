@@ -15,7 +15,6 @@ module.exports = (app) => {
 
   itemsRouter.get('/', function (req, res) {
     delete req.query["_"];
-    console.log(req.query);
     itemsDB.find(req.query).exec(function (error, items) {
       setTimeout(
         () => res.send({

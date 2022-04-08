@@ -2,12 +2,8 @@
     "name": "RE22",
     "version": "1.0.0",
     "description": "Example ReactJS application",
-    "main": "server/index.js",
+    "proxy": "http://localhost:8080",
     "scripts": {
-        "dev": "node dev.js",
-        "server:dev": "nodemon -r dotenv/config server/start.js",
-        "server": "node server/start.js",
-        "debug:server": "node --inspect-brk server/start.js",
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",

@@ -3,11 +3,11 @@ var globSync = require('glob').sync;
 var express = require('express');
 var app = express();
 
-const PATH_STYLES = path.resolve(__dirname, '../app/styles');
+//const PATH_STYLES = path.resolve(__dirname, '../app/styles');
 
-app.use('/styles', express.static(PATH_STYLES));
+//app.use('/styles', express.static(PATH_STYLES));
 
-app.use('/', express.static(path.join(__dirname, '..', 'build')));
+app.use('/', express.static(path.join(__dirname, '..', 'build', 'index.html')));
 
 var mocks = globSync('./mocks/**/*.js', {cwd: __dirname}).map(require);
 
@@ -20,7 +20,7 @@ mocks.forEach(function (route) {
   route(app);
 });
 
-var server = app.listen(process.env.PORT || 3000, () => {
+var server = app.listen(process.env.PORT || 8080, () => {
   var port = server.address().port;
 
   console.log('Server is listening at %s', port);

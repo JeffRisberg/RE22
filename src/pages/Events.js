@@ -1,26 +1,47 @@
-import React from 'react';
-//import axios from "axios";
-//import Table from "../components/Table";
+import React, {useEffect, useMemo, useState} from 'react';
+import axios from "axios";
+import Table from "../components/Table";
 
 function Events() {
 
+  const columns = useMemo(
+    () => [
+      {
+        Header: "Events",
+        columns: [
+          {
+            Header: "Text",
+            accessor: "text"
+          },
+          {
+            Header: "Description",
+            accessor: "description"
+          },
+          {
+            Header: "Time",
+            accessor: "time"
+          }
+        ]
+      }
+    ],
+    []
+  );
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const result = await axios("http://localhost:3000/api/events");
+      setData(result.data.data);
+    })();
+  }, []);
+
   return (
     <div>
-      <h2>Events page</h2>
-
-      <div className="row">
-        <div className="col-md-4">
-          Feature 1
-        </div>
-        <div className="col-md-4">
-          Feature 2
-        </div>
-        <div className="col-md-4">
-          Feature 3
-        </div>
-      </div>
+      <Table columns={columns} data={data}/>
     </div>
-  );
+  )
 }
 
 export default Events;
+
