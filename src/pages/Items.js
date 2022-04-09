@@ -2,6 +2,16 @@ import React, {useEffect, useMemo, useState} from 'react';
 import axios from "axios";
 import Table from "../components/Table";
 
+
+function handleEdit(row) {
+  console.log(row);
+  // display modal
+  // say user types in modal new firstName
+  // post request
+
+  // set row.firstName = newFirstName
+}
+
 function Items() {
 
   const columns = useMemo(
@@ -20,6 +30,14 @@ function Items() {
           {
             Header: "Value",
             accessor: "value"
+          },
+          {
+            Header: "",
+            Cell: row => (
+              <div>
+                <button onClick={e=> handleEdit(row.row.original)}>Edit</button>
+              </div>
+            )
           }
         ]
       }
