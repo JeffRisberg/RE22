@@ -2,6 +2,21 @@ import React, {useEffect, useMemo, useState} from 'react';
 import axios from "axios";
 import Table from "../components/Table";
 
+
+function handleEdit(row) {
+  var index = row.index;
+  console.log("edit event at " + index);
+  // display modal
+  // say user types in modal new firstName
+  // post request
+
+  // set row.firstName = newFirstName
+}
+
+function handleClick(e) {
+  console.log("events click")
+}
+
 function Events() {
 
   const columns = useMemo(
@@ -20,6 +35,15 @@ function Events() {
           {
             Header: "Time",
             accessor: "time"
+          },
+          {
+            Header: "Edit",
+            id: "id",
+            Cell: ({row}) => (
+              <button onClick={e => handleEdit(row)}>
+                Detailed View
+              </button>
+            )
           }
         ]
       }
@@ -38,6 +62,9 @@ function Events() {
 
   return (
     <div>
+      <button onClick={handleClick}>
+        Click
+      </button>
       <Table columns={columns} data={data}/>
     </div>
   )

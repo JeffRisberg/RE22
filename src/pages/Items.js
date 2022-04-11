@@ -4,12 +4,17 @@ import Table from "../components/Table";
 
 
 function handleEdit(row) {
-  console.log(row);
+  var index = row.index;
+  console.log("edit item at " + index);
   // display modal
   // say user types in modal new firstName
   // post request
 
   // set row.firstName = newFirstName
+}
+
+function handleClick(e) {
+  console.log("items click")
 }
 
 function Items() {
@@ -32,16 +37,17 @@ function Items() {
             accessor: "value"
           },
           {
-            Header: "",
-            Cell: row => (
-              <div>
-                <button onClick={e=> handleEdit(row.row.original)}>Edit</button>
-              </div>
+            Header: "Edit",
+            id: "id",
+            Cell: ({row}) => (
+              <button onClick={e => handleEdit(row)}>
+                Detailed View
+              </button>
             )
           }
         ]
       }
-      ],
+    ],
     []
   );
 
@@ -56,7 +62,10 @@ function Items() {
 
   return (
     <div>
-        <Table columns={columns} data={data}/>
+      <button onClick={handleClick}>
+        Click
+      </button>
+      <Table columns={columns} data={data}/>
     </div>
   )
 }
