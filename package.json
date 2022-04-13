@@ -1,7 +1,7 @@
 {
     "name": "RE22",
     "version": "1.0.0",
-    "description": "Example ReactJS application",
+    "description": "Updating RE03 to current packages and dependecies",
     "proxy": "http://localhost:8080",
     "scripts": {
         "start": "react-scripts start",
