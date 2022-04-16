@@ -55,7 +55,7 @@ function Items() {
 
   useEffect(() => {
     (async () => {
-      const result = await axios("http://localhost:3000/api/items");
+      const result = await axios("http://localhost:8080/api/items");
       setData(result.data.data);
     })();
   }, []);

@@ -55,13 +55,14 @@ function Events() {
 
   useEffect(() => {
     (async () => {
-      const result = await axios("http://localhost:3000/api/events");
+      const result = await axios("http://localhost:8080/api/events");
       setData(result.data.data);
     })();
   }, []);
 
   return (
     <div>
+      TEST TEST
       <button onClick={handleClick}>
         Click
       </button>
