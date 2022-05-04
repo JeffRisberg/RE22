@@ -2,7 +2,6 @@ import React, {useEffect, useMemo, useState} from 'react';
 import axios from "axios";
 import Table from "../components/Table";
 
-
 function handleEdit(row) {
   var index = row.index;
   console.log("edit event at " + index);
@@ -62,7 +61,6 @@ function Events() {
 
   return (
     <div>
-      TEST TEST
       <button onClick={handleClick}>
         Click
       </button>

@@ -16,13 +16,12 @@ module.exports = (app) => {
   eventsRouter.get('/', function (req, res) {
     delete req.query["_"];
     eventsDB.find(req.query).exec(function (error, events) {
-      setTimeout(
-        () => res.send({
-          'status': 'ok',
-          'data': events
-        }),
-        2000);
-    })
+      res.send(
+      {
+        'status': 'ok',
+        'data': events
+      })
+    });
   });
 
   eventsRouter.post('/', function (req, res) {

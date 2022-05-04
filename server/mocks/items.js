@@ -16,13 +16,12 @@ module.exports = (app) => {
   itemsRouter.get('/', function (req, res) {
     delete req.query["_"];
     itemsDB.find(req.query).exec(function (error, items) {
-      setTimeout(
-        () => res.send({
-          'status': 'ok',
-          'data': items
-        }),
-        2000);
-    })
+      res.send(
+      {
+        'status': 'ok',
+        'data': items
+      })
+    });
   });
 
   itemsRouter.post('/', function (req, res) {
