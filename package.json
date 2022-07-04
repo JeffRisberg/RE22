@@ -28,12 +28,12 @@
         "style-loader": "^0.23.1"
     },
     "dependencies": {
-        "@emotion/react": "^11.8.2",
-        "@emotion/styled": "^11.8.1",
-        "@mui/icons-material": "^5.6.2",
-        "@mui/material": "^5.7.0",
-        "@mui/styles": "^5.7.0",
-        "async": "^3.2.3",
+        "@emotion/react": "^11.9.3",
+        "@emotion/styled": "^11.9.3",
+        "@mui/icons-material": "^5.8.4",
+        "@mui/material": "^5.8.7",
+        "@mui/styles": "^5.8.7",
+        "async": "^3.2.4",
         "axios": "^0.26.1",
         "history": "^4.10.1",
         "prop-types": "^15.8.1",
