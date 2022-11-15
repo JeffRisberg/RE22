@@ -21,7 +21,7 @@
         "glob": "^7.2.3",
         "mini-css-extract-plugin": "^0.12.0",
         "nedb": "^1.8.0",
-        "react-hot-loader": "^4.13.0",
+        "react-hot-loader": "^4.13.1",
         "react-scripts": "^5.0.0",
         "react-test-renderer": "^17.0.2",
         "sass-loader": "^7.3.1",
